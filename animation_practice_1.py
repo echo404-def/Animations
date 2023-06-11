@@ -22,7 +22,7 @@ class Main:
         self.canvas = tk.Canvas(self.root, width=500, height=300)
         self.canvas.pack()
         
-        self.speed = 10
+        self.speed = 2
         self.x = 100
         self.y = 220
         
@@ -31,11 +31,12 @@ class Main:
         self.update()
         
     def update(self):
+        self.canvas.delete("all")
         self.canvas.create_image(250, 150, image=self.bg_b)
         self.move_character()
         self.canvas.create_image(250, 150, image=self.bg_f)
         self.root.title(strftime("%Y / %m / %d  %A   %H : %M : %S"))
-        self.root.after(500, self.update)
+        self.root.after(50, self.update)
         
     def move_character(self):
         if self.x >= 450:

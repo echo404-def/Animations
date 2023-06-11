@@ -7,6 +7,7 @@ Created on Sun Jun 11 15:12:51 2023
 """
 
 import tkinter as tk
+from time import strftime
 
 class Main:
     def __init__(self):
@@ -33,6 +34,7 @@ class Main:
         self.canvas.create_image(250, 150, image=self.bg_b)
         self.move_character()
         self.canvas.create_image(250, 150, image=self.bg_f)
+        self.root.title(strftime("%Y / %m / %d  %A   %H : %M : %S"))
         self.root.after(500, self.update)
         
     def move_character(self):
